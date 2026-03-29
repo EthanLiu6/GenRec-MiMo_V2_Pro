@@ -1,0 +1,14 @@
+[2026-03-29 15:14:10] [INFO] [genrec] 日志文件: /Users/ethanliu/Documents/designation_project/codes/GenRec-MiMo_V2_Pro/logs/run_20260329_151410.log
+[2026-03-29 15:14:10] [INFO] [genrec.__main__] 设备: cpu
+[2026-03-29 15:14:10] [INFO] [genrec.__main__] Semantic IDs: (3416, 3), 测试集: 102697 条
+[2026-03-29 15:14:10] [INFO] [genrec.__main__] 用户特征: (6040, 3)
+[2026-03-29 15:14:10] [INFO] [genrec.__main__] 加载Decoder: rq_kmeans, epoch=10, val_loss=2.4599, num_codebooks=3, 用户特征=是
+[2026-03-29 15:14:11] [INFO] [genrec.__main__] 开始评估, 6040 个测试用户...
+[2026-03-29 15:14:59] [INFO] [genrec.__main__] ==================================================
+[2026-03-29 15:14:59] [INFO] [genrec.__main__] 评估结果 (rq_kmeans, 6040 个测试用户):
+[2026-03-29 15:14:59] [INFO] [genrec.__main__]   Recall@5: 0.0084
+[2026-03-29 15:14:59] [INFO] [genrec.__main__]   Recall@10: 0.0085
+[2026-03-29 15:14:59] [INFO] [genrec.__main__]   Recall@20: 0.0121
+[2026-03-29 15:14:59] [INFO] [genrec.__main__] ==================================================
+[2026-03-29 15:14:59] [INFO] [genrec.__main__] 结果已保存: /Users/ethanliu/Documents/designation_project/codes/GenRec-MiMo_V2_Pro/outputs/eval_results_rq_kmeans.txt
+[2026-03-29 15:14:59] [INFO] [genrec.__main__] 如需演示推理: .venv/bin/python scripts/07_evaluate.py --demo

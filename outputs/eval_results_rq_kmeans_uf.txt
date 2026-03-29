@@ -1,0 +1,6 @@
+Method: rq_kmeans
+User features: True
+Num test users: 6040
+Recall@5: 0.0088
+Recall@10: 0.0096
+Recall@20: 0.0129
