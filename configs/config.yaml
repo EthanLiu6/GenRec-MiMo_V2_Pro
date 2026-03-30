@@ -10,7 +10,7 @@ data:
   min_item_interactions: 5               # 物品最少交互数（低于此值移除）
   train_ratio: 0.8                       # 训练集比例
   val_ratio: 0.1                         # 验证集比例（剩余为测试集）
-  max_seq_len: 50                        # 用户交互序列最大长度
+  max_seq_len: 64                        # 用户交互序列最大长度
 
 # --- 特征提取 ---
 features:
@@ -39,12 +39,23 @@ sid:
 # --- RQ-VAE特有参数 ---
 rq_vae:
   num_codebooks: 3                       # 残差量化层数
+  input_dim: 402                         # 输入特征维度
+  hidden_dim: 512                        # 隐藏层维度
+  latent_dim: 128                        # 潜在空间维度
+  codebook_size: 32                      # 每个码本的大小
+  codebook_dim: 128                      # 码本向量维度
+  commitment_weight: 1.0                 # commitment loss权重
+  decay: 0.99                            # EMA衰减系数（RQ-VAE/VQ-VAE使用）
+  epochs: 50                             # 训练轮数
+  batch_size: 256                        # 批次大小
+  lr: 0.0001                             # 学习率
+  model_save_path: "output/models/rq_vae"             # 模型保存路径
 
 # --- RQ-KMeans特有参数 ---
 rq_kmeans:
   num_codebooks: 3                       # 残差量化层数
-  encoder_pretrain_epochs: 30            # 编码器预训练轮数
-  decoder_finetune_epochs: 20            # 解码器微调轮数
+  encoder_pretrain_epochs: 50            # 编码器预训练轮数
+  decoder_finetune_epochs: 40            # 解码器微调轮数
   cosine_anti_collapse_weight: 0.0       # SID阶段余弦反塌缩（0.0=关闭）
   cosine_level_weights: [0.3, 0.5, 1.0]
 
@@ -59,7 +70,7 @@ decoder:
   d_model: 128                           # 模型维度
   nhead: 4                               # 注意力头数
   num_layers: 4                          # Transformer层数
-  dim_feedforward: 512                   # FFN维度
+  dim_feedforward: 256                   # FFN维度
   dropout: 0.1                           # Dropout率
   special_token_size: 4                  # 特殊token数量（PAD=0, BOS=1, EOS=2, SEP=3）
   use_user_features: false               # 是否使用用户特征（需先运行02b_preprocess_users.py）
@@ -67,9 +78,9 @@ decoder:
   diversity_recent_n: 2                  # 只惩罚最近N个物品的历史code（0=全部历史）
   epochs: 10                             # 训练轮数
   batch_size: 128                        # 批次大小
-  lr: 0.0001                             # 学习率
+  lr: 0.0002                             # 学习率
   weight_decay: 0.01                     # 权重衰减
 
 # --- 评估 ---
 eval:
-  top_k: [5, 10, 20]                     # Recall@K 的K值
+  top_k: [5, 10, 20, 50]                     # Recall@K 的K值

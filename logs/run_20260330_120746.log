@@ -1,0 +1,5 @@
+[2026-03-30 12:07:46] [INFO] [genrec] 日志文件: e:\biyelunwen\GenRec-MiMo_V2_Pro\logs\run_20260330_120746.log
+[2026-03-30 12:07:46] [INFO] [genrec.__main__] 设备: cuda
+[2026-03-30 12:07:46] [INFO] [genrec.__main__] Semantic IDs: (3416, 3), 测试集: 102697 条
+[2026-03-30 12:07:46] [INFO] [genrec.__main__] 加载Decoder: method=rq_kmeans, epoch=10, val_loss=2.2244, num_codebooks=3, user_feat=False
+[2026-03-30 12:07:47] [INFO] [genrec.__main__] 开始评估, 6040 个测试用户...

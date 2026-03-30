@@ -1,0 +1,14 @@
+[2026-03-30 12:08:00] [INFO] [genrec] 日志文件: e:\biyelunwen\GenRec-MiMo_V2_Pro\logs\run_20260330_120800.log
+[2026-03-30 12:08:00] [INFO] [genrec.__main__] 设备: cuda
+[2026-03-30 12:08:00] [INFO] [genrec.__main__] Semantic IDs: (3416, 3), 测试集: 102697 条
+[2026-03-30 12:08:01] [INFO] [genrec.__main__] 加载Decoder: method=rq_kmeans, epoch=10, val_loss=2.2244, num_codebooks=3, user_feat=False
+[2026-03-30 12:08:01] [INFO] [genrec.__main__] 开始评估, 6040 个测试用户...
+[2026-03-30 12:10:36] [INFO] [genrec.__main__] ==================================================
+[2026-03-30 12:10:36] [INFO] [genrec.__main__] 评估结果 (rq_kmeans, user_feat=False, 6040 用户):
+[2026-03-30 12:10:36] [INFO] [genrec.__main__]   Recall@5: 0.0066
+[2026-03-30 12:10:36] [INFO] [genrec.__main__]   Recall@10: 0.0068
+[2026-03-30 12:10:36] [INFO] [genrec.__main__]   Recall@20: 0.0089
+[2026-03-30 12:10:36] [INFO] [genrec.__main__]   Recall@50: 0.0169
+[2026-03-30 12:10:36] [INFO] [genrec.__main__] ==================================================
+[2026-03-30 12:10:36] [INFO] [genrec.__main__] 结果已保存: e:\biyelunwen\GenRec-MiMo_V2_Pro\outputs/eval_results_rq_kmeans.txt
+[2026-03-30 12:10:36] [INFO] [genrec.__main__] 如需演示: .venv/bin/python scripts/07_evaluate.py --demo

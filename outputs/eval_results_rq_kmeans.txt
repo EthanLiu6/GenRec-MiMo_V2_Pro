@@ -1,6 +1,7 @@
 Method: rq_kmeans
 User features: False
 Num test users: 6040
-Recall@5: 0.0071
-Recall@10: 0.0070
-Recall@20: 0.0098
+Recall@5: 0.0066
+Recall@10: 0.0068
+Recall@20: 0.0089
+Recall@50: 0.0169
