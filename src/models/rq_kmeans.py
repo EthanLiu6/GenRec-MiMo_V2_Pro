@@ -118,12 +118,13 @@ class ResidualKMeansQuantizer(nn.Module):
         for i, quantizer in enumerate(self.quantizers):
             quantizer.init_from_data(residual)
             # 计算量化结果，更新残差
+            embedding_np = quantizer.embedding.cpu().numpy()
             dists = np.sum(
-                (residual[:, None, :] - quantizer.embedding.numpy()[None, :, :]) ** 2,
+                (residual[:, None, :] - embedding_np[None, :, :]) ** 2,
                 axis=-1,
             )
             indices = np.argmin(dists, axis=1)
-            quantized = quantizer.embedding.numpy()[indices]
+            quantized = embedding_np[indices]
             residual = residual - quantized
             print(f"    Level {i}: K-Means聚类完成, 码本大小={quantizer.codebook_size}")
 
